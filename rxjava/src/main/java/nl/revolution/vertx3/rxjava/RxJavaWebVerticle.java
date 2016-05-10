@@ -33,7 +33,6 @@ public class RxJavaWebVerticle extends AbstractVerticle {
                 .subscribe(combinedResult -> vertx.eventBus().sendObservable(Service3.ADDRESS, combinedResult)
                 .subscribe(reply3 -> request.response().end("RxJavaWebVerticle - response from Service 3: " + reply3.body())));
 
-
             // Or, in a oneliner:
 //            vertx.eventBus().sendObservable(Service1.ADDRESS, "message-to-service1")
 //                .zipWith(vertx.eventBus().sendObservable(Service2.ADDRESS, "message-to-service2"),
