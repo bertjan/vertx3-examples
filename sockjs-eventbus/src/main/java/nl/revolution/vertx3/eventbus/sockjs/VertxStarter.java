@@ -1,13 +1,13 @@
 package nl.revolution.vertx3.eventbus.sockjs;
 
 import io.vertx.core.*;
-import io.vertx.core.logging.LoggerFactory;
-import io.vertx.core.logging.SLF4JLogDelegateFactory;
+
+import static nl.revolution.vertx3.utils.LoggingUtils.configureLogging;
 
 public class VertxStarter extends AbstractVerticle {
 
     public static void main(String... args) {
-        System.setProperty(LoggerFactory.LOGGER_DELEGATE_FACTORY_CLASS_NAME, SLF4JLogDelegateFactory.class.getName());
+        configureLogging();
 
         VertxOptions options = new VertxOptions().setClustered(true).setClusterHost("localhost");
 

@@ -11,8 +11,17 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
+    <groupId>nl.revolution.vertx3-examples</groupId>
     <artifactId>sockjs-eventbus</artifactId>
 
     <name>Vert.x 3 examples : SockJS Event Bus bridge</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>nl.revolution.vertx3-examples</groupId>
+            <artifactId>utils</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+    </dependencies>
 
 </project>

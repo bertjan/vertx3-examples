@@ -11,9 +11,18 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
+    <groupId>nl.revolution.vertx3-examples</groupId>
     <artifactId>helloworld</artifactId>
 
     <name>Vert.x 3 examples : Hello world</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>nl.revolution.vertx3-examples</groupId>
+            <artifactId>utils</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>

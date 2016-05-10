@@ -12,16 +12,8 @@
     </parent>
 
     <groupId>nl.revolution.vertx3-examples</groupId>
-    <artifactId>rxjava</artifactId>
+    <artifactId>utils</artifactId>
 
-    <name>Vert.x 3 examples : RxJava</name>
-
-    <dependencies>
-        <dependency>
-            <groupId>nl.revolution.vertx3-examples</groupId>
-            <artifactId>utils</artifactId>
-            <version>${project.parent.version}</version>
-        </dependency>
-    </dependencies>
+    <name>Vert.x 3 examples : Utils</name>
 
 </project>

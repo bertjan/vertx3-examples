@@ -83,6 +83,7 @@
     </build>
 
     <modules>
+        <module>utils</module>
         <module>helloworld</module>
         <module>basic-eventbus</module>
         <module>rxjava</module>

@@ -1,25 +1,21 @@
 package nl.revolution.vertx3.rxjava;
 
-import io.vertx.core.*;
-import io.vertx.core.logging.LoggerFactory;
-import io.vertx.core.logging.SLF4JLogDelegateFactory;
+import io.vertx.core.AbstractVerticle;
+import io.vertx.core.Vertx;
 import nl.revolution.vertx3.services.*;
+
+import static nl.revolution.vertx3.utils.LoggingUtils.configureLogging;
 
 public class RxJavaVertxStarter extends AbstractVerticle {
 
     public static void main(String... args) {
-        System.setProperty(LoggerFactory.LOGGER_DELEGATE_FACTORY_CLASS_NAME, SLF4JLogDelegateFactory.class.getName());
+        configureLogging();
 
-        VertxOptions options = new VertxOptions().setClustered(true).setClusterHost("localhost");
-
-        Vertx.clusteredVertx(options, resultHandler -> {
-            Vertx vertx = resultHandler.result();
-            vertx.deployVerticle(new Service1());
-            vertx.deployVerticle(new Service2());
-            vertx.deployVerticle(new Service3());
-            vertx.deployVerticle(new RxJavaWebVerticle());
-        });
-
+        Vertx vertx = Vertx.vertx();
+        vertx.deployVerticle(new Service1());
+        vertx.deployVerticle(new Service2());
+        vertx.deployVerticle(new Service3());
+        vertx.deployVerticle(new RxJavaWebVerticle());
     }
 
 }
