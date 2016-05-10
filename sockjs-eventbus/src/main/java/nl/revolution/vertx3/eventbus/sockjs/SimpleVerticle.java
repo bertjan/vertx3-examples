@@ -1,4 +1,4 @@
-package nl.revolution.vertx3.eventbus;
+package nl.revolution.vertx3.eventbus.sockjs;
 
 import io.vertx.core.AbstractVerticle;
 

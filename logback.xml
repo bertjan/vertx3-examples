@@ -1,0 +1,19 @@
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender" level="INFO">
+        <encoder>
+            <pattern>[%-5level] %logger{15} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="io.vertx" level="INFO">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+    <logger name="com.hazelcast" level="ERROR">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+    <logger name="io.netty.util.internal.PlatformDependent" level="ERROR">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+    <root level="INFO">
+    </root>
+</configuration>
