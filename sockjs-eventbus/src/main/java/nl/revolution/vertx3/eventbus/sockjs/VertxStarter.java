@@ -15,7 +15,7 @@ public class VertxStarter extends AbstractVerticle {
             Vertx vertx = resultHandler.result();
             vertx.deployVerticle(new SockJSEventBusBridge());
             vertx.deployVerticle(new SimpleVerticle());
-             vertx.deployVerticle("js/simpleVerticle.js");
+            vertx.deployVerticle("js/simpleVerticle.js");
         });
     }
 
