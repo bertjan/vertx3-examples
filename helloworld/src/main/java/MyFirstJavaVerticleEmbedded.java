@@ -15,8 +15,8 @@ public class MyFirstJavaVerticleEmbedded {
     public static void main(String... args) {
         LOG.info("Starting embedded Vert.x");
 
-        Vertx.vertx().
-                createHttpServer()
+        Vertx.vertx()
+                .createHttpServer()
                 .requestHandler(request -> {
                     LOG.info("handling request");
                     request.response().end("Hello world from Java with embedded Vert.x!");
