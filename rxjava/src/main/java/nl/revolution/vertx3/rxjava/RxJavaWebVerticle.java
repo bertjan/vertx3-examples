@@ -30,15 +30,15 @@ public class RxJavaWebVerticle extends AbstractVerticle {
             Observable<Message<String>> reply2 = vertx.eventBus().sendObservable(Service2.ADDRESS, "message-to-service2");
 
             Observable.zip(reply1, reply2, (Message resp1, Message resp2) -> resp1.body() + "-" + resp2.body())
-                .subscribe(combinedResult -> vertx.eventBus().sendObservable(Service3.ADDRESS, combinedResult)
-                .subscribe(reply3 -> request.response().end("RxJavaWebVerticle - response from Service 3: " + reply3.body())));
+                .concatMap(combinedResult -> vertx.eventBus().sendObservable(Service3.ADDRESS, combinedResult))
+                .subscribe(reply3 -> request.response().end("RxJavaWebVerticle - response from Service 3: " + reply3.body()));
 
             // Or, in a oneliner:
 //            vertx.eventBus().sendObservable(Service1.ADDRESS, "message-to-service1")
 //                .zipWith(vertx.eventBus().sendObservable(Service2.ADDRESS, "message-to-service2"),
 //                        (Message resp1, Message resp2) -> resp1.body() + "-" + resp2.body())
-//                .subscribe(combinedResult -> vertx.eventBus().sendObservable(Service3.ADDRESS, combinedResult)
-//                .subscribe(reply3 -> request.response().end("RxJavaWebVerticle oneliner - response from Service 3: " + reply3.body())));
+//                .concatMap(combinedResult -> vertx.eventBus().sendObservable(Service3.ADDRESS, combinedResult))
+//                .subscribe(reply3 -> request.response().end("RxJavaWebVerticle oneliner - response from Service 3: " + reply3.body()));
 
         }
     }
