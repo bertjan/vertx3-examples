@@ -48,6 +48,16 @@
                                 </transformer>
                             </transformers>
                             <artifactSet>
+                                <excludes>
+                                    <exclude>org.codehaus.groovy:*</exclude>
+                                    <exclude>io.vertx:vertx-lang-js</exclude>
+                                    <exclude>io.reactivex:*</exclude>
+                                    <exclude>com.hazelcast:*</exclude>
+                                    <exclude>com.fasterxml.jackson.core:*</exclude>
+                                    <exclude>io.vertx:vertx-auth-common:*</exclude>
+                                    <exclude>io.vertx:vertx-rx-java:*</exclude>
+                                    <exclude>io.vertx:vertx-hazelcast:*</exclude>
+                                </excludes>
                             </artifactSet>
                             <outputFile>${project.build.directory}/${project.artifactId}-${project.version}-fat.jar</outputFile>
                         </configuration>
