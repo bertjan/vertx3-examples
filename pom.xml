@@ -12,7 +12,7 @@
     <name>Vert.x 3 examples</name>
 
     <properties>
-        <vertx.version>3.5.1</vertx.version>
+        <vertx.version>3.5.2</vertx.version>
     </properties>
 
     <dependencies>
@@ -40,6 +40,11 @@
             <groupId>io.vertx</groupId>
             <artifactId>vertx-lang-js</artifactId>
             <version>${vertx.version}</version>
+        </dependency>
+        <dependency>
+          <groupId>io.vertx</groupId>
+          <artifactId>vertx-bridge-common</artifactId>
+          <version>${vertx.version}</version>
         </dependency>
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
